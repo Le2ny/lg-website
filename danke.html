@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- Absichtlich nicht verlinkt und nicht in Suchmaschinen. Inhalt verschlüsselt, Passwort gibt es nur mündlich. -->
+<meta name="robots" content="noindex, nofollow">
+<title>Danke – Lennard Groß</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>
+  #tor form { display: flex; gap: 10px; flex-wrap: wrap; max-width: 420px; }
+  #tor input { flex: 1 1 200px; font: inherit; padding: 10px 12px; border-radius: 6px; border: 1px solid var(--line); background: var(--surface); color: inherit; }
+</style>
+</head>
+<body style="--accent:#0A5BD8">
+<header class="top">
+  <div class="wrap">
+    <span class="brand"><picture><source srcset="img/logo-negativ.svg" media="(prefers-color-scheme: dark)"><img src="img/logo-farbig.svg" alt="Lennard Groß Softwarebau" height="44"></picture></span>
+  </div>
+</header>
+<main id="inhalt">
+  <section class="hero" id="tor">
+    <div class="wrap stack">
+      <h1>Moin!</h1>
+      <form>
+        <input type="password" id="pw" autocomplete="off" aria-label="Code" placeholder="Code" autofocus>
+        <button class="btn" type="submit">Öffnen</button>
+      </form>
+      <p class="small" id="fehler" role="status" aria-live="polite"></p>
+    </div>
+  </section>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <span>© 2026 Lennard Groß</span>
+    <nav aria-label="Rechtliches"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></nav>
+  </div>
+</footer>
+<script>
+(() => {
+  const D = { salt: "rONI63vdX1IOZvFI1Ao8yA==", iv: "WQfUqzqdorMH+S12", ct: "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", iter: 600000 };
+  const bytes = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
+  const form = document.querySelector('#tor form'), fehler = document.getElementById('fehler');
+  // Visitenkarte: QR-Code auf danke.html#CODE öffnet direkt (der Teil nach # geht nie an den Server)
+  async function oeffnen(roh) {
+    fehler.textContent = 'Einen Moment …';
+    try {
+      const pw = roh.trim().toLowerCase();
+      const basis = await crypto.subtle.importKey('raw', new TextEncoder().encode(pw), 'PBKDF2', false, ['deriveKey']);
+      const key = await crypto.subtle.deriveKey({ name: 'PBKDF2', hash: 'SHA-256', salt: bytes(D.salt), iterations: D.iter },
+        basis, { name: 'AES-GCM', length: 256 }, false, ['decrypt']);
+      const klar = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: bytes(D.iv) }, key, bytes(D.ct));
+      document.getElementById('inhalt').innerHTML = new TextDecoder().decode(klar);
+      history.replaceState(null, '', location.pathname);  // Code nicht in der Adresszeile stehen lassen
+    } catch {
+      fehler.textContent = 'Der Code stimmt leider nicht.';
+    }
+  }
+  form.addEventListener('submit', e => { e.preventDefault(); oeffnen(document.getElementById('pw').value); });
+  if (location.hash.length > 1) oeffnen(decodeURIComponent(location.hash.slice(1)));
+})();
+</script>
+</body>
+</html>
